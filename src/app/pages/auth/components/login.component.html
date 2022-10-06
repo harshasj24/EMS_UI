@@ -1,0 +1,39 @@
+<div class="login--wrapper">
+  <form action="">
+    <div class="login__header close">
+      <p>Login</p>
+      <button class="close-btn" mat-dialog-close mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div class="login__form mx-auto d-flex flex-column">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input [autofocus]="true" matInput placeholder="Placeholder" />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          [type]="typePass ? 'password' : 'text'"
+          matInput
+          placeholder="Placeholder"
+        />
+        <button
+          (click)="typePass = !typePass"
+          type="button"
+          matSuffix
+          mat-icon-button
+        >
+          <mat-icon>{{ typePass ? "visibility" : "visibility_off" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="login__footer">
+      <button mat-raised-button color="primary" class="btn btn-primary ms-auto">
+        Login
+      </button>
+    </div>
+  </form>
+</div>

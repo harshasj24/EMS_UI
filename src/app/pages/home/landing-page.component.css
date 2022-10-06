@@ -1,0 +1,37 @@
+/* https://cdn.pixabay.com/photo/2017/10/10/21/47/laptop-2838921__340.jpg */
+
+.landing-page--wrapper {
+  width: 100vw;
+
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/illustrations/2734887.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  /* align-items: center; */
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+
+  flex-direction: column;
+  color: rgb(249, 246, 246);
+}
+
+::ng-deep .mat-dialog-container {
+  border-radius: 20px !important;
+  padding: 0 !important;
+}
+.landing-page__content h1 {
+  font-size: 4.25rem;
+  font-weight: 700;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.landing-page__content {
+  align-content: center !important;
+}
