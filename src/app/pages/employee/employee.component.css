@@ -1,0 +1,53 @@
+.employee--wrapper {
+  width: 100vw;
+  height: calc(100vh - 52px);
+}
+mat-sidenav-container {
+  height: 100%;
+  background-color: rgb(236, 236, 236);
+}
+mat-sidenav {
+  height: calc(100% - 20px);
+  width: 255px;
+  margin: 10px;
+  border-radius: 15px;
+}
+.content {
+  height: calc(100% - 20px);
+  margin: 10px;
+  margin-left: 20px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+}
+
+.side-nav__profile-picture {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.side-nav__profile-picture img {
+  width: 100%;
+}
+/* .email p {
+  margin: 0;
+} */
+.ts-table {
+  height: calc(100% - 40px);
+  overflow-y: scroll;
+}
+.profile__actions {
+  margin-top: 100px;
+}
+.profile__actions button {
+  width: 200px;
+}
+.ts-table::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ts-table::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 4px;
+}

@@ -1,5 +1,5 @@
 <div class="login--wrapper">
-  <form action="">
+  <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()" action="">
     <div class="login__header close">
       <p>Login</p>
       <button class="close-btn" mat-dialog-close mat-icon-button>

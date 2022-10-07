@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* slides.component.scss */
-
+@import url("./assets/styles/spacing.css");
+@import url("./assets/styles/texts.css");
+@import url("./assets/styles/utility.css");
 html,
 body {
   height: 100%;

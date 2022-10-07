@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViewService } from './services/view.service';
+
+
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
-  providers: [],
+  imports: [
+    CommonModule
+  ]
 })
-export class CoreModule {}
+export class AdminModule { }
