@@ -4,6 +4,7 @@ import { SwiperModule } from "swiper/angular";
 import { LandingPageComponent } from "./landing-page.component";
 import { RouterModule, Routes } from "@angular/router";
 import { MaterialModule } from "src/app/material";
+import { AuthModule } from "../auth/auth.module";
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     SwiperModule,
     RouterModule.forChild(routes),
     MaterialModule,
+    AuthModule,
   ],
   exports: [RouterModule],
 })

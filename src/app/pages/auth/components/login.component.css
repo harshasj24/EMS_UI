@@ -1,5 +1,5 @@
 .login--wrapper {
-  width: 340px;
+  width: 370px;
   display: flex;
   flex-direction: column;
 }
@@ -40,4 +40,8 @@
   border-top: 1px solid rgb(232, 231, 231);
   display: flex;
   justify-content: flex-end;
+}
+.alert {
+  /* height: 50px; */
+  padding: 12px !important;
 }

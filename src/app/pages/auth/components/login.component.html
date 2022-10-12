@@ -8,9 +8,17 @@
     </div>
 
     <div class="login__form mx-auto d-flex flex-column">
+      <div *ngIf="isInvalid" class="alert alert-danger" role="alert">
+        <span>Invalid Email Or Password</span>
+      </div>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input [autofocus]="true" matInput placeholder="Placeholder" />
+        <input
+          formControlName="email"
+          [autofocus]="true"
+          matInput
+          placeholder="Placeholder"
+        />
         <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline">
@@ -19,6 +27,7 @@
           [type]="typePass ? 'password' : 'text'"
           matInput
           placeholder="Placeholder"
+          formControlName="password"
         />
         <button
           (click)="typePass = !typePass"

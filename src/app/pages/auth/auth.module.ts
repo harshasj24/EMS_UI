@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { LoginComponent } from './components/login.component';
-import { SignUpComponent } from './components/sign-up.component';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './auth.component';
-import { MaterialModule } from 'src/app/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from "./components/login.component";
+import { SignUpComponent } from "./components/sign-up.component";
+import { RouterModule, Routes } from "@angular/router";
+import { AuthComponent } from "./auth.component";
+import { MaterialModule } from "src/app/material";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ApiService } from "./services/api.service";
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: "login",
     component: AuthComponent,
   },
   {
-    path: 'signup',
+    path: "signup",
     component: AuthComponent,
   },
 ];
@@ -28,6 +29,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
   ],
+  providers: [ApiService],
   exports: [RouterModule],
 })
 export class AuthModule {}

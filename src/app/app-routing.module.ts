@@ -1,26 +1,31 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'landingPage',
-    pathMatch: 'full',
+    path: "",
+    redirectTo: "landingPage",
+    pathMatch: "full",
   },
   {
-    path: 'auth',
+    path: "auth",
     loadChildren: () =>
-      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+      import("./pages/auth/auth.module").then((m) => m.AuthModule),
   },
   {
-    path: 'landingPage',
+    path: "landingPage",
     loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
+      import("./pages/home/home.module").then((m) => m.HomeModule),
   },
   {
-    path: 'employee',
+    path: "employee",
     loadChildren: () =>
-      import('./pages/employee/employee.module').then((m) => m.EmployeeModule),
+      import("./pages/employee/employee.module").then((m) => m.EmployeeModule),
+  },
+  {
+    path: "admin",
+    loadChildren: () =>
+      import("./pages/admin/admin.module").then((m) => m.AdminModule),
   },
 ];
 
