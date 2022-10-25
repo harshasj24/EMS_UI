@@ -1,0 +1,12 @@
+.admin--wrapper {
+  background-color: rgb(231, 231, 231);
+  height: calc(100vh - 60px);
+}
+
+mat-card {
+  width: 340px;
+}
+.card-body button {
+  width: 100% !important;
+  margin-top: 10px;
+}

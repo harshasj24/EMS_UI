@@ -1,8 +1,13 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { MatSidenav } from "@angular/material/sidenav";
 import { HttpService } from "src/app/core/services/http.service";
 import { LocalStorageService } from "src/app/core/services/localstorage.service";
 import { ViewService } from "src/app/core/services/view.service";
+// import { ApiService } from "../auth/services/api.service";
+import { TimeSheetDailogComponent } from "./components/time-sheet-dailog/time-sheet-dailog.component";
+import { ApiService } from "./services/api.service";
+import { StoreService } from "./services/store.service";
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -30,23 +35,47 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class EmployeeComponent implements OnInit, AfterViewInit {
   constructor(
     private viewS: ViewService,
-    private http: HttpService,
-    private localStorage: LocalStorageService
+    private api: ApiService,
+    private localStorage: LocalStorageService,
+    private store: StoreService,
+    private dailog: MatDialog // private dailogRef: MatDialogRef<TimeSheetDailogComponent>
   ) {}
   @ViewChild("sideNav") sideNav: MatSidenav;
   ngAfterViewInit(): void {
     this.viewS.setSideNav(this.sideNav);
   }
+
+  openDailog() {
+    let dailogRef = this.dailog.open(TimeSheetDailogComponent, {
+      disableClose: true,
+    });
+    dailogRef.afterClosed().subscribe((val) => {
+      this.getEmployeeDetails(true);
+    });
+  }
   displayedColumns: string[] = ["position", "name", "weight", "symbol"];
   dataSource = ELEMENT_DATA;
+  myData: any = {};
+
+  getEmployeeDetails(reCall: boolean) {
+    if (!this.store.isEmpDetLoaded || reCall) {
+      this.api
+        .getEmployeeDetails(this.localStorage.get("employee")?.id)
+        .subscribe((val: any) => {
+          console.log(val);
+          this.store.isEmpDetLoaded = true;
+          this.store.setEmployeeDetails(val.obj);
+        });
+    }
+  }
   ngOnInit(): void {
     // this.viewS.setSideNav(this.sideNav);
+    console.log(this.store);
+    this.store.employeeStore.subscribe((store) => {
+      console.log(store);
+      this.myData = store;
+    });
     console.log(this.localStorage.get("employee"));
-
-    this.http
-      .get(`/employee/getEmp/${this.localStorage.get("employee")?.id}`)
-      .subscribe((val) => {
-        console.log(val);
-      });
+    this.getEmployeeDetails(false);
   }
 }

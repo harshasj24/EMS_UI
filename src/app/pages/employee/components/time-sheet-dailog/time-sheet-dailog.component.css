@@ -1,0 +1,18 @@
+.dailog__header {
+  border-bottom: 1px solid lightgray;
+}
+.dailog__header h1 {
+  margin: 0;
+}
+.dailog--wrapper {
+  width: 380px;
+}
+.dailog__body {
+  margin: 10px 0px 10px 0px;
+}
+mat-form-field {
+  width: 100%;
+}
+.dailog__fotter {
+  border-top: 1px solid lightgray;
+}

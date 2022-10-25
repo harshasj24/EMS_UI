@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthInterceptor } from './auth.interceptor';
+import { JwtInterceptor } from './jwt.interceptor';
 
-describe('AuthInterceptor', () => {
+describe('JwtInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
-      AuthInterceptor
+      JwtInterceptor
       ]
   }));
 
   it('should be created', () => {
-    const interceptor: AuthInterceptor = TestBed.inject(AuthInterceptor);
+    const interceptor: JwtInterceptor = TestBed.inject(JwtInterceptor);
     expect(interceptor).toBeTruthy();
   });
 });

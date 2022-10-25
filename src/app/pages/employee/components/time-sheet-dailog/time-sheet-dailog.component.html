@@ -1,0 +1,42 @@
+<div class="dailog--wrapper">
+  <div class="dailog__header"><h1>Add Time Sheet</h1></div>
+  <form
+    [formGroup]="timeSheetForm"
+    (ngSubmit)="timeSheetForm.valid && handleSubmit()"
+    action=""
+  >
+    <div class="dailog__body container__column--center">
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Login Time</mat-label>
+        <input formControlName="loginTime" step="1" type="time" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Logout Time</mat-label>
+        <input formControlName="logoutTime" step="1" type="time" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+      </mat-form-field>
+    </div>
+    <div class="dilog__fotter d-flex">
+      <button
+        mat-dialog-close
+        type="button"
+        mat-raised-button
+        color="warn"
+        class="ms-auto me-3"
+      >
+        Cancle
+      </button>
+      <button type="submit" mat-raised-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>
