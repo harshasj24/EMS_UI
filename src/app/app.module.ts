@@ -10,8 +10,6 @@ import { CoreModule } from "./core/core.module";
 import { ViewService } from "./core/services/view.service";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { JwtInterceptor } from "./interceptors/jwt.interceptor";
-import { EffectsModule } from "@ngrx/effects";
-import { StoreModule } from "@ngrx/store";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +21,6 @@ import { StoreModule } from "@ngrx/store";
     MaterialModule,
     CoreModule,
     HttpClientModule,
-    EffectsModule.forRoot([]),
-    StoreModule.forRoot({}, {}),
   ],
   providers: [ViewService],
   bootstrap: [AppComponent],
