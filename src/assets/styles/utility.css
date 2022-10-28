@@ -195,3 +195,14 @@
 .rotate-90-negetive {
   transform: rotate(-90deg);
 }
+
+/*snackbar configs starts */
+
+.sucess {
+  background-color: #2e7d32;
+  color: #ffff;
+}
+.sucess .mat-simple-snackbar-action {
+  color: #fff;
+}
+/*snackbar configs ends*/ ;

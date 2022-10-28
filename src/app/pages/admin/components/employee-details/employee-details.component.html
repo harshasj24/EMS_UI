@@ -1,0 +1,20 @@
+<div class="admim-employee--wrapper container__column--center">
+  <h1>Access Employees of your originization and edit there details</h1>
+  <h3>Enter Employee ID.</h3>
+
+  <div class="admin__input container__row--center">
+    <mat-icon>search</mat-icon>
+    <input type="text" placeholder="search" />
+    <mat-icon class="admin-input__right-arrow">arrow_right_alt</mat-icon>
+  </div>
+  <p class="my-3">OR</p>
+  <div>
+    <button (click)="handleSnackBar()" mat-raised-button color="primary">
+      Add New Employee
+    </button>
+  </div>
+
+  <div class="employee-details mat-elevation-z4" [ngClass]="class">
+    <button (click)="hide()">Hide</button>
+  </div>
+</div>

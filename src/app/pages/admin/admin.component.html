@@ -1,9 +1,16 @@
 <div class="admin--wrapper container__column--center">
-  <mat-card>
-    <div class="card-body container__column--center">
-      <button mat-raised-button color="primary">Add Employee</button>
-      <button mat-raised-button color="primary">View Employee</button>
-      <button mat-raised-button color="primary">Add Admin</button>
-    </div>
-  </mat-card>
+  <div class="admin__greet">
+    <h1>Welcome Admin</h1>
+  </div>
+  <h1>Whom do you want to access</h1>
+  <div class="admin__options-cards">
+    <mat-card class="" routerLink="/admin/employeeDetails">
+      <img src="../../../assets/illustrations/employee.png" alt="" />
+      Employee
+    </mat-card>
+    <mat-card routerLink="/admin/adminDetails">
+      <img src="../../../assets/illustrations/admin.png" alt="" />
+      Admin
+    </mat-card>
+  </div>
 </div>

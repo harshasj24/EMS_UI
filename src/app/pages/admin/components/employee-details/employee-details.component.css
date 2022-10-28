@@ -1,0 +1,89 @@
+.admim-employee--wrapper {
+  background-color: rgb(241, 241, 241);
+  height: calc(100vh - 52px);
+}
+.search-bar {
+  width: 700px;
+}
+.search-bar__input {
+}
+mat-card {
+  width: 150px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+mat-card h4 {
+  margin-top: 10px;
+}
+mat-card:hover {
+  transform: scale(1.1);
+}
+.admin__input {
+  border: solid #673ab7;
+  padding: 6px;
+}
+.admin__input input {
+  outline: none !important;
+  border: none !important;
+  background: none !important;
+  width: 260px;
+}
+.admin__input .admin-input__right-arrow {
+  /* border: solid; */
+  box-sizing: border-box;
+  /* padding: px; */
+  width: 50px;
+  background-color: #3f51b5;
+  color: white;
+  text-align: center;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.admin__input .admin-input__right-arrow:active {
+  transform: scale(0.98);
+}
+.employee-details {
+  /* height: calc(100vh - 100px) !important; */
+  height: 0;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  bottom: 0px;
+  display: none;
+}
+
+.show {
+  display: block;
+  height: calc(100vh - 100px);
+  animation: show 0.45s ease-in-out normal;
+}
+
+.hide {
+  display: none;
+  height: 0;
+  animation: hide 40s ease-in-out normal;
+}
+
+@keyframes show {
+  from {
+    height: 0;
+  }
+  to {
+    height: calc(100vh - 100px);
+  }
+}
+@keyframes hide {
+  from {
+    height: calc(100vh - 100px);
+  }
+  to {
+    height: 0;
+  }
+}
