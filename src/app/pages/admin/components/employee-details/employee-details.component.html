@@ -4,8 +4,10 @@
 
   <div class="admin__input container__row--center">
     <mat-icon>search</mat-icon>
-    <input type="text" placeholder="search" />
-    <mat-icon class="admin-input__right-arrow">arrow_right_alt</mat-icon>
+    <input [(ngModel)]="empId" type="text" placeholder="search" />
+    <mat-icon (click)="handleSearchEmployee()" class="admin-input__right-arrow"
+      >arrow_right_alt</mat-icon
+    >
   </div>
   <p class="my-3">OR</p>
   <div>
@@ -15,6 +17,20 @@
   </div>
 
   <div class="employee-details mat-elevation-z4" [ngClass]="class">
-    <button (click)="hide()">Hide</button>
+    <div class="display-employee container__column--center">
+      <div class="border-round">
+        <img
+          src="../../../../../assets/illustrations/employee.png"
+          width="100px"
+          alt=""
+        />
+      </div>
+
+      <p>{{ employeeDetails?.employeeId }}</p>
+      <p>{{ employeeDetails?.employeeName }}</p>
+      <p>{{ employeeDetails?.email }}</p>
+      <p>{{ employeeDetails?.employeeAddress }}</p>
+      <p>{{ employeeDetails?.phoneNo }}</p>
+    </div>
   </div>
 </div>

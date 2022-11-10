@@ -1,24 +1,25 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin.component';
-import { RouterModule, Routes } from '@angular/router';
-import { MaterialModule } from 'src/app/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CoreModule } from 'src/app/core/core.module';
-import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
-import { AdminDetailsComponent } from './components/admin-details/admin-details.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { AdminComponent } from "./admin.component";
+import { RouterModule, Routes } from "@angular/router";
+import { MaterialModule } from "src/app/material";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CoreModule } from "src/app/core/core.module";
+import { EmployeeDetailsComponent } from "./components/employee-details/employee-details.component";
+import { AdminDetailsComponent } from "./components/admin-details/admin-details.component";
+import { AdminApiService } from "./services/admin-api.service";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: AdminComponent,
   },
   {
-    path: 'employeeDetails',
+    path: "employeeDetails",
     component: EmployeeDetailsComponent,
   },
   {
-    path: 'adminDetails',
+    path: "adminDetails",
     component: AdminDetailsComponent,
   },
 ];
@@ -37,5 +38,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     CoreModule,
   ],
+  providers: [AdminApiService],
 })
 export class AdminModule {}

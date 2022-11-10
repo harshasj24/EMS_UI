@@ -205,4 +205,14 @@
 .sucess .mat-simple-snackbar-action {
   color: #fff;
 }
+
+.error {
+  background-color: #d32f2f;
+  color: white;
+  font-weight: 500;
+}
+
+.error .mat-simple-snackbar-action {
+  color: #fff;
+}
 /*snackbar configs ends*/ ;

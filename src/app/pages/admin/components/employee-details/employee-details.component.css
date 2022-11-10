@@ -8,20 +8,13 @@
 .search-bar__input {
 }
 mat-card {
-  width: 150px;
-  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.5s;
 }
-mat-card h4 {
-  margin-top: 10px;
-}
-mat-card:hover {
-  transform: scale(1.1);
-}
+
 .admin__input {
   border: solid #673ab7;
   padding: 6px;
@@ -86,4 +79,17 @@ mat-card:hover {
   to {
     height: 0;
   }
+}
+
+.display-employee {
+  display: flex;
+  justify-content: center;
+}
+.border-round {
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 50%;
+}
+.employee-details {
+  padding: 10px;
 }
