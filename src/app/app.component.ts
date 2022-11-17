@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './core/services/auth.service';
 import { ViewService } from './core/services/view.service';
 
 @Component({
@@ -8,8 +9,12 @@ import { ViewService } from './core/services/view.service';
 })
 export class AppComponent {
   title = 'ems-app';
-  constructor(public viewS: ViewService) {}
+  constructor(public viewS: ViewService, public auth: AuthService) {}
+
   toggleSideNav() {
     this.viewS.toggle();
+  }
+  handleClick() {
+    this.auth.logout();
   }
 }

@@ -1,51 +1,28 @@
-import { Component, OnInit } from "@angular/core";
-import { MatIcon } from "@angular/material/icon";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { AdminApiService } from "../../services/admin-api.service";
+import { Component, OnInit } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StoreService } from 'src/app/pages/employee/services/store.service';
+import { AdminApiService } from '../../services/admin-api.service';
 
 @Component({
-  selector: "app-employee-details",
-  templateUrl: "./employee-details.component.html",
-  styleUrls: ["./employee-details.component.css"],
+  selector: 'app-employee-details',
+  templateUrl: './employee-details.component.html',
+  styleUrls: ['./employee-details.component.css'],
 })
 export class EmployeeDetailsComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
-    private adminApi: AdminApiService
+    private adminApi: AdminApiService,
+    private router: ActivatedRoute
   ) {}
-  empId: number;
-  employeeDetails: any;
-  ngOnInit(): void {}
-  class = "";
-  hide() {
-    this.class = "hide";
-  }
-  handleSnackBar() {
-    this.snackBar.open("Employee Added", `X`, {
-      panelClass: "sucess",
-    });
-    this.class = "show";
-  }
 
-  handleSearchEmployee() {
-    this.adminApi.getEmployeeDetails(this.empId).subscribe((res: any) => {
-      console.log(res);
-      if (res.error) {
-        this.snackBar.open(res.obj, "X", {
-          panelClass: "error",
-          horizontalPosition: "center",
-          verticalPosition: "top",
-          duration: 2000,
-        });
-      } else {
-        this.class = "show";
-        this.employeeDetails = res.obj;
-      }
+  ngOnInit(): void {
+    this.router.params.subscribe((route) => {
+      console.log(route);
     });
   }
 }
-
-
 
 // employeeId: 1
 // employeeName: "Admin"

@@ -1,0 +1,70 @@
+<div class="add-form--wrapper">
+  <form
+    [formGroup]="addEmpForm"
+    (ngSubmit)="addEmpForm.valid && handleSubmit()"
+    action=""
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>Employee Name</mat-label>
+      <input
+        formControlName="employeeName"
+        [autofocus]="true"
+        matInput
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        formControlName="email"
+        [autofocus]="true"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <mat-form-field *ngIf="!isEdit" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        formControlName="password"
+        [autofocus]="true"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose an role</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="ROLE_ADMIN">Admin</mat-option>
+        <mat-option value="ROLE_EMPLOYEE">Employee</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Employee Address </mat-label>
+      <input
+        formControlName="employeeAddress"
+        [autofocus]="true"
+        matInput
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number </mat-label>
+      <input
+        formControlName="phoneNo"
+        [autofocus]="true"
+        matInput
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+    <div class="form-actions ms-auto">
+      <button mat-raised-button color="primary">
+        {{ isEdit ? "Edit" : "Add" }}
+      </button>
+      <button mat-dialog-close mat-raised-button class="ms-3" color="accent">
+        Cancle
+      </button>
+    </div>
+  </form>
+</div>

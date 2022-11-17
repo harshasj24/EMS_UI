@@ -1,10 +1,15 @@
-<mat-toolbar class="">
+<mat-toolbar *ngIf="auth.getEmployee()" class="">
   <button (click)="toggleSideNav()" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
   <span class="logo">Employee Managemnt system</span>
-  <a href="" routerLink="/admin">admin</a>
-  <a href="" routerLink="/employee">Employee</a>
-  <button mat-button color="primary" class="ml-auto logout">Logout</button>
+  <button
+    mat-button
+    color="primary"
+    (click)="handleClick()"
+    class="ml-auto logout"
+  >
+    Logout
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

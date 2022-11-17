@@ -6,6 +6,7 @@
 }
 .dailog--wrapper {
   width: 380px;
+  padding: auto;
 }
 .dailog__body {
   margin: 10px 0px 10px 0px;
